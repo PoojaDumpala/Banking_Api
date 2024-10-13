@@ -1,0 +1,32 @@
+<div class="col-md-12">
+    <h2>Add Savings Account</h2>
+</div>
+<div class="col-md-12">
+    <div class="col-md-3">
+        Account No: <input type="text" maxlength="5" [(ngModel)]="accountNo">
+    </div>
+
+    <div class="col-md-3">
+        Type: <select [(ngModel)]="branchName">
+            <option *ngFor="let branch of branches">{{branch.BRANCH_NAME}}</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        Opening Balance: <input type="text" maxlength="10" [(ngModel)]="balance">
+    </div>
+    <div class="col-md-3">
+        Interest Rate: <input type="number" maxlength="2" [(ngModel)]="interestRate">
+    </div>
+    <div class="col-md-3">
+        Customer: <select [(ngModel)]="customerssn">
+            <option *ngFor="let customer of customers" [value]="customer.SSN">{{customer.NAME}}</option>
+        </select>
+    </div>
+
+
+    <div class="col-md-3">
+        <button type="button" (click)="onSubmit()">Submit</button>
+    </div>
+
+
+</div>

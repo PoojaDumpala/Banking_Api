@@ -1,0 +1,37 @@
+<div class="col-md-12">
+    <h2>Add Manager</h2>
+</div>
+<div class="col-md-12">
+
+
+    <div class="col-md-3">
+        SSN: <input type="text" maxlength="9" [(ngModel)]="ssn">
+    </div>
+    <div class="col-md-3">
+        Name: <input type="text" maxlength="50" [(ngModel)]="name">
+    </div>
+    <div class="col-md-3">
+        Telephone No: <input type="text" maxlength="10" [(ngModel)]="telephoneNo">
+    </div>
+
+    <div class="col-md-3">
+        Manager: <select [(ngModel)]="managerSsn">
+            <option [value]="manager.SSN" *ngFor="let manager of managers">{{manager.NAME}}</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        Start Date: <input type="date" [(ngModel)]="startDate">
+    </div>
+    <div class="col-md-3">
+        Type: <select [(ngModel)]="branchName">
+            <option *ngFor="let branch of branches">{{branch.BRANCH_NAME}}</option>
+        </select>
+    </div>
+
+
+    <div class="col-md-3">
+        <button type="button" (click)="onSubmit()">Submit</button>
+    </div>
+
+
+</div>

@@ -1,0 +1,55 @@
+<div class="col-md-12">
+    <h2>View/Add Loan</h2>
+</div>
+<div class="col-md-12">
+    <div class="col-md-3">
+        Select Customer: <select [(ngModel)]="customerssn">
+            <option *ngFor="let customer of customers" [value]="customer.SSN">{{customer.NAME}}</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <button type="button" (click)="onCustomerSubmit()">Show Loans</button>
+    </div>
+</div>
+<div class="col-md-12">
+    <h4 class="col-md-12">
+        Existing Loans
+    </h4>
+    <table class="col-md-12">
+        <tr>
+            <th>Loan No</th>
+            <th>Branch Name</th>
+            <th>Amount</th>
+        </tr>
+        <tr *ngFor="let loan of loans">
+            <td>{{loan.LOAN_NO}} </td>
+            <td>{{loan.BRANCH_NAME}}</td>
+            <td>{{loan.LOAN_AMOUNT}}</td>
+        </tr>
+    </table>
+</div>
+<div class="col-md-12">
+    <h4 class="col-md-12">
+        Add New Loan
+    </h4>
+    <div class="col-md-3">
+        Loan No: <input type="text" maxlength="5" [(ngModel)]="loanNo">
+    </div>
+    <div class="col-md-3">
+        Type: <select [(ngModel)]="branchName">
+            <option *ngFor="let branch of branches">{{branch.BRANCH_NAME}}</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        Loan Amount: <input type="number" maxlength="10" [(ngModel)]="loanAmount">
+    </div>
+    <!-- <div class="col-md-3">
+        Type: <select [(ngModel)]="customerssn">
+            <option *ngFor="let customer of customers" [value]="customer.SSN">{{customer.NAME}}</option>
+        </select>
+    </div> -->
+    <div class="col-md-3">
+        <button type="button" (click)="onSubmit()">Submit</button>
+    </div>
+
+</div>

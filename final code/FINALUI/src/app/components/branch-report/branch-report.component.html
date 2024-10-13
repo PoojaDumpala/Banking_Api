@@ -1,0 +1,77 @@
+<div class="col-md-12">
+    <h2>Branch Report </h2>
+</div>
+<div class="col-md-12">
+
+
+    <div class="col-md-3">
+        Type: <select [(ngModel)]="branchName">
+            <option [value]="null">Select Branch</option>
+            <option *ngFor="let branch of branches">{{branch.BRANCH_NAME}}</option>
+        </select>
+    </div>
+
+
+    <div class="col-md-3">
+        <button type="button" (click)="onSubmit()">Submit</button>
+    </div>
+
+
+</div>
+
+<div class="col-md-12">
+    <table class="col-md-12">
+        <thead>
+
+            <tr>
+                <th colspan="2">Customer Name</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let report of branchReport">
+            <tr>
+                <td>
+                    <a class="hoverPointer" (click)="onExpand(report)">
+                        <i *ngIf="!report.show" class="fa-solid fa-caret-right"></i>
+                        <i *ngIf="report.show" class="fa-solid fa-caret-down"></i>
+                    </a>
+                </td>
+                <td> {{report.customer}} </td>
+            </tr>
+            <tr *ngIf="report.show">
+                <td colspan="5">
+                    <div class="col-md-12 inner-table" style="font-weight:bold">Loans</div>
+                    <div class="col-md-12 inner-table">
+                        <table class="col-md-12">
+                            <tr>
+                                <th>Loan No</th>
+                                <th>Amount</th>
+                                <th>Outstanding</th>
+                            </tr>
+                            <tr *ngFor="let loan of report.loans">
+                                <td> {{loan.LOAN_NO}} </td>
+                                <td> {{loan.LOAN_AMOUNT}} </td>
+                                <td> {{loan.pending}} </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-12 inner-table" style="font-weight:bold">Accounts</div>
+                    <div class="col-md-12 inner-table">
+                        <table class="col-md-12">
+                            <tr>
+                                <th>Account No</th>
+                                <th>Account Type</th>
+                                <th>Balance</th>
+                            </tr>
+                            <tr *ngFor="let account of report.accounts">
+                                <td> {{account.ACCOUNT_NO}} </td>
+                                <td> {{account.ACCOUNT_TYPE}} </td>
+                                <td> {{account.BALANCE}} </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

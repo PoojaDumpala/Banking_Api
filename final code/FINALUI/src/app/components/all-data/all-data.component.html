@@ -1,0 +1,152 @@
+<div class="col-md-12" *ngIf="allData">
+    <h2 class="col-md-12">Banks</h2>
+    <table class="col-md-12">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+        <tr *ngFor="let bank of allData.banks">
+            <td> {{bank.ID}} </td>
+            <td> {{bank.NAME}} </td>
+        </tr>
+    </table>
+    <h2 class="col-md-12">Branches</h2>
+    <table class="col-md-12">
+        <tr>
+            <th>Branch Name</th>
+            <th>Bank Id</th>
+            <th>City</th>
+        </tr>
+        <tr *ngFor="let branch of allData.branches">
+            <td> {{branch.BRANCH_NAME}} </td>
+            <td> {{branch.BANK_ID}} </td>
+            <td> {{branch.CITY}} </td>
+        </tr>
+    </table>
+    <h2 class="col-md-12">Employee</h2>
+    <table class="col-md-12">
+        <tr>
+            <th>SSN</th>
+            <th>Name</th>
+            <th>Telephone No</th>
+            <th>Manager SSN</th>
+            <th>Start Date</th>
+            <th>Branch Name</th>
+            <th>Is Manager</th>
+        </tr>
+        <tr *ngFor="let employee of allData.employees">
+            <td> {{employee.SSN}} </td>
+            <td> {{employee.NAME}} </td>
+            <td> {{employee.TELEPHONE_NO}} </td>
+            <td> {{employee.MANAGER_SSN}} </td>
+            <td> {{employee.START_DATE}} </td>
+            <td> {{employee.BRANCH_NAME}} </td>
+            <td> {{employee.IS_MANAGER}} </td>
+        </tr>
+    </table>
+    <h2 class="col-md-12">Customers</h2>
+    <table class="col-md-12">
+        <tr>
+            <th>SSN</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Associate SSN</th>
+            <th>Associate Type</th>
+        </tr>
+        <tr *ngFor="let customer of allData.customers">
+            <td> {{customer.SSN}} </td>
+            <td> {{customer.NAME}} </td>
+            <td> {{customer.ADDRESS}} </td>
+            <td> {{customer.STREET}} </td>
+            <td> {{customer.CITY}} </td>
+            <td> {{customer.ESSN}} </td>
+            <td> {{customer.ASSOCIATE_TYPE}} </td>
+        </tr>
+    </table>
+    <h2 class="col-md-12">Dependents</h2>
+    <table class="col-md-12">
+        <tr>
+            <th>Employee SSN</th>
+            <th>Name</th>
+            <th>Relation</th>
+        </tr>
+        <tr *ngFor="let dependent of allData.dependents">
+            <td> {{dependent.EMPLOYEE_SSN}} </td>
+            <td> {{dependent.NAME}} </td>
+            <td> {{dependent.RELATION}} </td>
+        </tr>
+    </table>
+    <h2 class="col-md-12">Accounts</h2>
+    <table class="col-md-12">
+        <tr>
+            <th>Account No</th>
+            <th>Account Type</th>
+            <th>Branch Name</th>
+            <th>Balance</th>
+            <th>Interest Rate</th>
+            <th>Overdraft Amount</th>
+        </tr>
+        <tr *ngFor="let account of allData.accounts">
+            <td> {{account.ACCOUNT_NO}} </td>
+            <td> {{account.ACCOUNT_TYPE}} </td>
+            <td> {{account.BRANCH_NAME}} </td>
+            <td> {{account.BALANCE}} </td>
+            <td> {{account.INTEREST_RATE}} </td>
+            <td> {{account.OVERDRAFT_AMOUNT}} </td>
+        </tr>
+    </table>
+    <h2 class="col-md-12">Account Holders</h2>
+    <table class="col-md-12">
+        <tr>
+            <th>Customer SSN</th>
+            <th>Account No</th>
+            <th>Recent Access Date</th>
+        </tr>
+        <tr *ngFor="let acholder of allData.accountholders">
+            <td> {{acholder.CUSTOMER_SSN}} </td>
+            <td> {{acholder.ACCOUNT_NO}} </td>
+            <td> {{acholder.RECENT_ACCESS_DATE}} </td>
+        </tr>
+    </table>
+    <h2 class="col-md-12">Loans</h2>
+    <table class="col-md-12">
+        <tr>
+            <th>Loan No</th>
+            <th>Branch Name</th>
+            <th>Loan Amount</th>
+        </tr>
+        <tr *ngFor="let loan of allData.loans">
+            <td> {{loan.LOAN_NO}} </td>
+            <td> {{loan.BRANCH_NAME}} </td>
+            <td> {{loan.LOAN_AMOUNT}} </td>
+        </tr>
+    </table>
+    <h2 class="col-md-12">Loan Holders</h2>
+    <table class="col-md-12">
+        <tr>
+            <th>Loan No</th>
+            <th>Customer SSN</th>
+        </tr>
+        <tr *ngFor="let loanholder of allData.loanholders">
+            <td> {{loanholder.LOAN_NO}} </td>
+            <td> {{loanholder.CUSTOMER_SSN}} </td>
+        </tr>
+    </table>
+    <h2 class="col-md-12">Loan Payments</h2>
+    <table class="col-md-12">
+        <tr>
+            <th>Loan No</th>
+            <th>Payment Date</th>
+            <th>Amount</th>
+            <th>Loan Payment No</th>
+        </tr>
+        <tr *ngFor="let payment of allData.loanpayments">
+            <td> {{payment.LOAN_NO}} </td>
+            <td> {{payment.PAYMENT_DATE}} </td>
+            <td> {{payment.AMOUNT}} </td>
+            <td> {{payment.LOAN_PAYMENT_NO}} </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+table, th, td {
+    border: 1px solid black;
+  }
+  th{
+    background-color: aqua;
+  }
+  td{
+    background-color: rgb(198, 141, 252);
+  }
+  table{
+    max-height: 100px;
+    overflow-y: auto;
+  }
+.inner-table td{
+  background-color: white!important;
+}
+.inner-table th{
+  background-color: white!important;
+}
+  .straight{
+    list-style-type: none;
+  }
+  .straight li{
+    float:left;
+    font-weight: bold;
+    color:blue;
+    padding:10px;
+  }
+  .hoverPointer{
+    cursor: pointer;
+  }

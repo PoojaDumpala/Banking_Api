@@ -1,0 +1,25 @@
+<div class="col-md-12">
+    <h2>Open Branch </h2>
+</div>
+<div class="col-md-12">
+    <div class="col-md-3">
+        Bank: <select [(ngModel)]="bankId">
+            <option [value]="bank.ID" *ngFor="let bank of banks">{{bank.NAME}}</option>
+        </select>
+    </div>
+
+    <div class="col-md-3">
+        Name: <input type="text" maxlength="50" [(ngModel)]="branchName">
+    </div>
+
+    <div class="col-md-3">
+        City: <input type="text" maxlength="20" [(ngModel)]="city">
+    </div>
+
+
+    <div class="col-md-3">
+        <button type="button" (click)="onSubmit()">Submit</button>
+    </div>
+
+
+</div>

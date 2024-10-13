@@ -1,0 +1,77 @@
+<div class="col-md-12">
+    <h2>Add Customer</h2>
+</div>
+<div class="col-md-12">
+    <div class="col-md-3">
+        SSN: <input type="text" maxlength="9" [(ngModel)]="ssn">
+    </div>
+    <div class="col-md-3">
+        Name: <input type="text" maxlength="30" [(ngModel)]="customerName">
+    </div>
+    <div class="col-md-3">
+        Address: <input type="text" maxlength="50" [(ngModel)]="address">
+    </div>
+    <div class="col-md-3">
+        Street: <input type="text" maxlength="20" [(ngModel)]="street">
+    </div>
+    <div class="col-md-3">
+        City: <input type="text" maxlength="15" [(ngModel)]="city">
+    </div>
+    <div class="col-md-3">
+        Associate: <select [(ngModel)]="essn">
+            <option [value]="employee.SSN" *ngFor="let employee of employees">{{employee.NAME}}</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        Associate Type: <select [(ngModel)]="associateType">
+            <option>Loan Officer</option>
+            <option>Personal Banker</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        Type: <select [(ngModel)]="branchName">
+            <option *ngFor="let branch of branches">{{branch.BRANCH_NAME}}</option>
+        </select>
+    </div>
+
+    <div class="col-md-12">
+        <h3>Account Details</h3>
+    </div>
+    <div class="col-md-3">
+        Account No: <input type="text" maxlength="5" [(ngModel)]="accountNo">
+    </div>
+
+    
+    <div class="col-md-3">
+        Opening Balance: <input type="text" maxlength="10" [(ngModel)]="accountBalance">
+    </div>
+    <div class="col-md-3">
+        Account Type: <select [(ngModel)]="accountType">
+            <option value="SAVINGS">SAVINGS</option>
+            <option value="CHECKING">CHECKING</option>
+        </select>
+    </div>
+    <div class="col-md-3" *ngIf="accountType === 'SAVINGS'">
+        Interest Rate: <input type="number" maxlength="2" [(ngModel)]="interestRate">
+    </div>
+    <div class="col-md-3" *ngIf="accountType === 'CHECKING'">
+        Overdraft Amount: <input type="number" maxlength="2" [(ngModel)]="overdraftAmount">
+    </div>
+   
+
+    <div class="col-md-12">
+        <h3>Loan Details</h3>
+    </div>
+
+    <div class="col-md-3">
+        Loan No: <input type="text" maxlength="5" [(ngModel)]="loanNo">
+    </div>
+    <div class="col-md-3">
+        Loan Amount: <input type="number" maxlength="10" [(ngModel)]="loanAmount">
+    </div>
+
+
+    <div class="col-md-3">
+        <button type="button" (click)="onSubmit()">Submit</button>
+    </div>
+</div>

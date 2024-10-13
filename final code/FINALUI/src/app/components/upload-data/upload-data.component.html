@@ -1,0 +1,17 @@
+<div class="col-md-12">
+    <h2>Data Upload</h2>
+</div>
+<div class="col-md-12">
+    <div class="col-md-3">
+        Table: 
+        <select [(ngModel)]="uploadType">
+            <option [value]="table.key" *ngFor="let table of tables">{{table.label}}</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <input type="file" #fileUpload>
+    </div>
+    <div class="col-md-3">
+        <button type="button" (click)="onUpload()">Upload</button>
+    </div>
+</div>
